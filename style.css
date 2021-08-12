@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Georama:ital,wght@0,100;0,200;0,300;1,100;1,200;1,300&display=swap');
+body{
+	font-family: 'Georama';
+	animation: slide 1s ease;
+}.head{
+}.head_img  { clip-path: circle(); }
+.head_text {  }
+.hellomsg{
+	font-weight: normal;
+	font-style: italic;
+} .small_hr {
+  border:none;
+  border-top:1px solid;
+  margin:1em 15%;
+  animation: slide 1s ease;
+} .projects{
+	
+} .horizontal_div{
+	display: flex;
+  	flex-wrap: wrap;
+  	justify-content: center;
+} #about1{
+	position: absolute;
+	color: green;
+} #about1_img{}
+#about1_group{
+	position: relative;
+  	text-align: center;
+	text-overflow: ellipsis;
+ 	overflow: hidden;
+}
+/* Animations */
+@keyframes slide{
+	from{
+		transform: translateX(-100%);
+	} to{
+		transform: translateX(0px);
+	}
+}
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+} 
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: orange; }
+}
