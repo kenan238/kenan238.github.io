@@ -2,7 +2,10 @@
 body{
 	font-family: 'Georama';
 	animation: slide 1s ease;
-}.head{
+}center{
+	position: relative;
+}
+.head{
 }.head_img  { clip-path: circle(); }
 .head_text {  }
 .hellomsg{
@@ -20,10 +23,10 @@ body{
   flex-wrap: wrap;
   justify-content: center;
 }#about1_img{
-	position: relative;
-	z-index: 1;
+	/*position: absolute;
+	z-index: 1;*/
 } #about1{
-	position: relative;
+	position: absolute;
 	z-index: 2;
 	color: green;
 }#about1_group{
