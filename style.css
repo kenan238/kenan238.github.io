@@ -26,10 +26,9 @@ body{
 	/*position: absolute;
 	z-index: 1;*/
 } #about1{
-	position: absolute;
-	z-index: 2;
 	color: green;
-	width: 500;
+	width: 500px;
+	background-image: url("assets/imgs/window_black.png");
 }#about1_group{
   text-align: center;
 	text-overflow: ellipsis;
