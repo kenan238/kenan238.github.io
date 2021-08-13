@@ -1,4 +1,4 @@
-/*@import url('https://fonts.googleapis.com/css2?family=Georama:ital,wght@0,100;0,200;0,300;1,100;1,200;1,300&display=swap');*/
+@import url('https://fonts.googleapis.com/css2?family=Georama:ital,wght@0,100;0,200;0,300;1,100;1,200;1,300&display=swap');
 body{
 	font-family: 'Georama';
 	animation: slide 1s ease;
@@ -26,7 +26,6 @@ body{
 	/*position: absolute;
 	z-index: 1;*/
 } #about1{
-	font-family: "System";
 	color: green;
 	width: 500px;
 	background-image: url("assets/imgs/window_black.png");
