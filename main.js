@@ -6,7 +6,7 @@ const setupAbout1 = () => {
 	and i am really enjoy it since then... 
 		<br />----------<br />	I like programming in <strong>C++, Python and JS</strong> but i know many other languages, here is all i know:<br />
 		C++, C, C#, Python, JS, Shell (if it's even considered a language), Batch (if it's even considered a language), Lua, x86 asm (i know the instructions and stuff but no clue how to write in it), HTML, CSS, JSON, JAVA
-		<br />----------<br />	I've been doing are little projects (not neccessarely "little") and more stuff y'know, here are my projects: 
+		<br />----------<br />	I've been doing little projects (not neccessarely "little") and more stuff y'know, here are my projects: 
 		`;
 	// setTimeout(()=>{
 	// 	let o = document.getElementById('about1').offsetHeight+'px';
