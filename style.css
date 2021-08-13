@@ -17,15 +17,17 @@ body{
 	
 } .horizontal_div{
 	display: flex;
-  	flex-wrap: wrap;
-  	justify-content: center;
-} #about1{
-	position: absolute;
-	color: green;
-} #about1_img{}
-#about1_group{
+  flex-wrap: wrap;
+  justify-content: center;
+}#about1_img{
 	position: relative;
-  	text-align: center;
+	z-index: 1;
+} #about1{
+	position: relative;
+	z-index: 2;
+	color: green;
+}#about1_group{
+  text-align: center;
 	text-overflow: ellipsis;
  	overflow: hidden;
 }
