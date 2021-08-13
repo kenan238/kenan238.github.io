@@ -29,6 +29,7 @@ body{
 	position: absolute;
 	z-index: 2;
 	color: green;
+	width: 500;
 }#about1_group{
   text-align: center;
 	text-overflow: ellipsis;
