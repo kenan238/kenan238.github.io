@@ -29,6 +29,7 @@ body{
 	color: green;
 	width: 500px;
 	background-image: url("assets/imgs/window_black.png");
+	background-repeat: no-repeat;
 }#about1_group{
   text-align: center;
 	text-overflow: ellipsis;
