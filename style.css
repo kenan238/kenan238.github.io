@@ -60,6 +60,12 @@ body{
 	margin: 10px;
 	font-style: italic;
 	color: white;
+} .socialmedia_text{
+	font-size: 14px;
+	transition: font-size;
+	transition-duration: 1s;
+} .socialmedia_text:hover{
+	font-size: 30px;
 }
 /* Animations */
 @keyframes slide{
