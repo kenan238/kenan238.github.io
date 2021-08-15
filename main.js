@@ -1,4 +1,73 @@
 /* By⠀kenan238 */
+// CLASSES
+class vector2d{
+	constructor(x, y){
+		this.x = x;
+		this.y = y;
+	}
+}
+class html_window{
+	constructor(title, isDraggable, darkMode, w, h){
+		this.config = {
+			"title": title,
+			"isDraggable": isDraggable,
+			"darkMode": darkMode,
+			"WidthHeight": [w,h],
+			"xyOffset": new vector2d(0, 0),
+			"innerHTML": ""
+		};
+		this.html_element = null;
+		this.setHtmlElem();
+	} 
+	setTitle(f)             { this.config["title"]       = f;          }
+	setIsDraggable(f)       { this.config["isDraggable"] = f;          }
+	setXYOffset(f)          { this.config["xyOffset"]    = f;          }
+	getConfig(f)            { return this.config[f];                   }
+	setCssStyle(style, val) { this.html_element.style[style] = val;    }
+	setInnerHTML(inner)     { this.config["innerHTML"]       = inner;  }
+	resizeContent(){
+		for(let i=0; i<this.html_element.childNodes; i++){
+			this.html_element.childNodes[i].style.width  = this.html_element.style.width;
+			this.html_element.childNodes[i].style.height = this.html_element.style.height;
+		}
+	}
+	setXYOffsets(){
+		this.setCssStyle("position", "absolute");
+		// Handle X axis
+		if(this.getConfig("xyOffset").x >= 0) 
+			this.setCssStyle("left", this.getConfig("xyOffset").x + "px");
+		else if(this.getConfig("xyOffset").y < 0)
+			this.setCssStyle("right", this.getConfig("xyOffset").x + "px");
+		// Handle Y axis
+		if(this.getConfig("xyOffset").y >= 0)
+			this.setCssStyle("top", this.getConfig("xyOffset").y + "px");
+		else if(this.getConfig("xyOffset").y < 0)
+			this.setCssStyle("bottom", this.getConfig("xyOffset").y + "px");
+	}
+	setHtmlElem(){
+		this.html_element = document.createElement("DIV");
+		// white mode windows coming soon
+		// if(this.getConfig("darkMode")) this.html_element.background = "assets/imgs/window_black.png";
+		// else this.html_element.background = "assets/imgs/window_white.png";
+		this.setCssStyle("backgroundImage",  "url('assets/imgs/window_black.png')");
+		this.setCssStyle("backgroundRepeat", "no-repeat");
+		this.setCssStyle("width",            this.getConfig("WidthHeight")[0]+"px");
+		this.setCssStyle("height",           this.getConfig("WidthHeight")[1]+"px");
+		this.setXYOffsets();
+		document.body.appendChild(this.html_element);
+	}
+	update(){
+		this.html_element.innerHTML = `
+		<p>⠀⠀⠀⠀⠀${this.getConfig("title")}</p>
+		${this.getConfig("innerHTML")}
+		`;
+		this.setCssStyle("width",            this.getConfig("WidthHeight")[0]+"px");
+		this.setCssStyle("height",           this.getConfig("WidthHeight")[1]+"px");
+		// this.resizeContent();
+		this.setXYOffsets();
+	}
+}
+// CLASSES
 const setupAbout1 = () => {
 	document.getElementById('about1').innerHTML = `
 		<br /><br />⠀⠀⠀⠀⠀I am a passionate programmer who 
