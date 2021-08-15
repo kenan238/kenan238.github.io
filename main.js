@@ -1,11 +1,11 @@
-/* By kenan238 */
+/* By⠀kenan238 */
 const setupAbout1 = () => {
 	document.getElementById('about1').innerHTML = `
-		<br /><br />I am a passionate programmer who 
+		<br /><br />⠀⠀⠀⠀⠀I am a passionate programmer who 
 	has been programming for <i>${new Date().getFullYear() - 2019} years</i>
 	and i am really enjoy it since then... 
-		<br />----------<br />	I like programming in <strong>C++, Python and JS</strong> but i know many other languages, here is all i know:<br />
-		C++, C, C#, Python, JS, Shell (if it's even considered a language), Batch (if it's even considered a language), Lua, x86 asm (i know the instructions and stuff but no clue how to write in it), HTML, CSS, JSON, JAVA
+		<br />----------<br />	⠀⠀⠀⠀⠀⠀I like programming in <strong>C++, Python and JS</strong> but i know many other languages, here is all i know:<br />
+		⠀⠀⠀C++, C, C#, Python, JS, Shell (if it's even considered a language), Batch ⠀(if it's even considered a language), Lua, x86 asm (i know the instructions and stuff but no clue how to write in it), HTML, CSS, JSON, JAVA
 		<br />----------<br />	I've been doing little projects (not neccessarely "little") and more stuff y'know, here are my projects: 
 		`;
 	// setTimeout(()=>{
