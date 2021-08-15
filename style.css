@@ -1,5 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Georama:ital,wght@0,100;0,200;0,300;1,100;1,200;1,300&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+:root{
+	--main-anim-delay: 0.5s;
+}
 body{
 	font-family: 'Georama';
 	animation: slide 1s ease;
@@ -7,11 +10,18 @@ body{
 	position: relative;
 }
 .head{
+	transform: translateY(-103px);
+	background-color: orange;
+	width: 100%;
+	animation: slide_down 1s cubic-bezier(0.96,-0.02, 0.73, 0.8);
+	animation-delay: calc(var(--main-anim-delay) + 0.6s + 0.6s);
+	animation-fill-mode: forwards; 
 }.head_img  { clip-path: circle(); }
 .head_text {  }
 .hellomsg{
 	font-weight: normal;
 	font-style: italic;
+	font-size: 60px;
 } .small_hr {
   border:none;
   border-top:1px solid;
@@ -33,9 +43,23 @@ body{
 	background-image: url("assets/imgs/window_black.png");
 	background-repeat: no-repeat;
 }#about1_group{
-  text-align: center;
+  	text-align: center;
 	text-overflow: ellipsis;
  	overflow: hidden;
+} .hellomsg1{
+	opacity: 0;
+	animation: slide_up_fade_in 0.6s ease-out;
+	animation-delay: var(--main-anim-delay);
+	animation-fill-mode: forwards; 
+} .hellomsg2{
+	opacity: 0;
+	animation: slide_side_fade_in 0.6s ease-out;
+	animation-delay: calc(var(--main-anim-delay) + 0.6s);
+	animation-fill-mode: forwards; 
+} .about_section{
+	margin: 10px;
+	font-style: italic;
+	color: white;
 }
 /* Animations */
 @keyframes slide{
@@ -52,4 +76,16 @@ body{
 @keyframes blink-caret {
   from, to { border-color: transparent }
   50% { border-color: orange; }
+}
+@keyframes slide_up_fade_in{
+	from { transform: translateY(-100px); opacity: 0;	}
+	to { transform: translateY(0px); opacity: 1; }
+}
+@keyframes slide_side_fade_in{
+	from { transform: translateX(-100px); opacity: 0;	}
+	to { transform: translateX(0px); opacity: 1; }
+}
+@keyframes slide_down {
+	from { transform: translateY(-100px); }
+	to { transform: translateY(0px); }
 }
