@@ -104,7 +104,11 @@ const addProject = (img, imgwh, text) => {
 	`;
 	document.getElementsByClassName('projects')[0].appendChild(prepared);
 };
-window.onload = () => {
+function siteCode(){
+	// load the site
+	document.getElementById("VISIBLE_AFTER_LOADED").style["display"] = "block";
+	document.body.style["backgroundColor"] = "white";
+	// load the site
 	github_repo_window = new html_window("Github repo here" , false, true, "200px", "200px");
 	github_repo_window.setInnerHTML( `
 	<p class="VT323_STYLE">⠀⠀Github repository is <a class="VT323_STYLE" href="https://github.com/kenan238/kenan238.github.io"><strong>Here</strong></a></p>
@@ -121,4 +125,10 @@ window.onload = () => {
 	addProject("assets/imgs/noImg.png",    [100,100], "<strong>VirixOS</strong> an OS i will continue making once i am better at x86 and C++.")
 	addProject("assets/imgs/noImg.png",    [100,100], "<strong>RunPythonCodeFromDocx</strong> something i made in a few hours that can run python code from DOCX files.")
 	addProject("assets/imgs/noImg.png",    [100,100], "<strong>Aetheria</strong>, a game i've been working on with my 2 friends, kind of forgotten but i'll get back to working soon. <strong>THERE IS NO LOGO YET</strong>")
-};
+}
+document.addEventListener('DOMContentLoaded', ()=>{
+	setTimeout(()=>{
+		document.getElementById("LOADING_PAGE").style["display"] = "none";
+		siteCode();
+	}, 2000);
+});
