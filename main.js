@@ -1,4 +1,8 @@
 /* By⠀kenan238 */
+// GLOBAL
+var github_repo_window;
+var BG_MAIN__ID = "BG_MAIN__";
+// GLOBAL
 // CLASSES
 class vector2d{
 	constructor(x, y){
@@ -14,14 +18,18 @@ class html_window{
 			"darkMode": darkMode,
 			"WidthHeight": [w,h],
 			"xyOffset": new vector2d(0, 0),
-			"innerHTML": ""
+			"innerHTML": "",
+			"xyOffsetPrefix": "px"
 		};
 		this.html_element = null;
 		this.setHtmlElem();
 	} 
 	setTitle(f)             { this.config["title"]       = f;          }
 	setIsDraggable(f)       { this.config["isDraggable"] = f;          }
-	setXYOffset(f)          { this.config["xyOffset"]    = f;          }
+	setXYOffset(f, pref){
+		this.config["xyOffset"] = f;
+		this.config["xyOffsetPrefix"] = pref;
+	}
 	getConfig(f)            { return this.config[f];                   }
 	setCssStyle(style, val) { this.html_element.style[style] = val;    }
 	setInnerHTML(inner)     { this.config["innerHTML"]       = inner;  }
@@ -35,14 +43,14 @@ class html_window{
 		this.setCssStyle("position", "absolute");
 		// Handle X axis
 		if(this.getConfig("xyOffset").x >= 0) 
-			this.setCssStyle("left", this.getConfig("xyOffset").x + "px");
+			this.setCssStyle("left", this.getConfig("xyOffset").x+this.getConfig("xyOffsetPrefix"));
 		else if(this.getConfig("xyOffset").y < 0)
-			this.setCssStyle("right", this.getConfig("xyOffset").x + "px");
+			this.setCssStyle("right", this.getConfig("xyOffset").x+this.getConfig("xyOffsetPrefix"));
 		// Handle Y axis
 		if(this.getConfig("xyOffset").y >= 0)
-			this.setCssStyle("top", this.getConfig("xyOffset").y + "px");
+			this.setCssStyle("top", this.getConfig("xyOffset").y+this.getConfig("xyOffsetPrefix"));
 		else if(this.getConfig("xyOffset").y < 0)
-			this.setCssStyle("bottom", this.getConfig("xyOffset").y + "px");
+			this.setCssStyle("bottom", this.getConfig("xyOffset").y+this.getConfig("xyOffsetPrefix"));
 	}
 	setHtmlElem(){
 		this.html_element = document.createElement("DIV");
@@ -54,11 +62,12 @@ class html_window{
 		this.setCssStyle("width",            this.getConfig("WidthHeight")[0]+"px");
 		this.setCssStyle("height",           this.getConfig("WidthHeight")[1]+"px");
 		this.setXYOffsets();
-		document.body.appendChild(this.html_element);
+		document.getElementById(BG_MAIN__ID).appendChild(this.html_element);
 	}
 	update(){
 		this.html_element.innerHTML = `
 		<p>⠀⠀⠀⠀⠀${this.getConfig("title")}</p>
+		<br />
 		${this.getConfig("innerHTML")}
 		`;
 		this.setCssStyle("width",            this.getConfig("WidthHeight")[0]+"px");
@@ -96,6 +105,13 @@ const addProject = (img, imgwh, text) => {
 	document.getElementsByClassName('projects')[0].appendChild(prepared);
 };
 window.onload = () => {
+	github_repo_window = new html_window("Github repo here" , false, true, "200px", "200px");
+	github_repo_window.setInnerHTML( `
+	<p class="VT323_STYLE">⠀⠀Github repository is <a class="VT323_STYLE" href="https://github.com/kenan238/kenan238.github.io"><strong>Here</strong></a></p>
+	`);
+	let GRW_XYOFF_TEMP__ = new vector2d(0, 150);
+	github_repo_window.setXYOffset(GRW_XYOFF_TEMP__, "%");
+	github_repo_window.update();
 	setupAbout1();
 	addProject("assets/imgs/Json++.png",   [100,100], "<strong>Json++</strong> a little JSON parser i am making for fun in C++ :).")
 	addProject("assets/imgs/beepboop.png", [100,100], "<strong>BeepBoop</strong> a simple music compositor i made in HTML/CSS/JS, you can upload your notes in it and have whatever.")
