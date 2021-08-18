@@ -97,6 +97,29 @@ body{
 	color: green; font-family: VT323;
 } .about_section:hover{
 	transform: translateY(10px);
+} .lprogress::before, lprogress::after{
+	box-sizing: border-box;
+} .lprogress{
+	position: relative;
+	width: 500px;
+	height: 3em;
+	background-color: black;
+	border-style: solid;
+	border-color: white;
+	color: black;
+} .lprogress::before{
+	font-family: "VT323";
+	content: attr(data-label);
+	display: flex;
+	align-items: center; 
+	position: absolute;
+	top: .5em;
+	bottom: .5em;
+	left: .5em;
+	width: calc(var(--width) * 1%);
+	max-width: calc(100% - 1em);
+	background-color: white;
+	padding: 1em;
 }
 /* Animations */
 @keyframes slide{
@@ -133,4 +156,8 @@ body{
 	50% {
 		background-position: 0 100%;
 	}
+}
+@keyframes loading_progressbar_fill{
+	from{ width: 0%; }
+	to{   width: 100%; }
 }

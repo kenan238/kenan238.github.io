@@ -128,7 +128,17 @@ function siteCode(){
 }
 document.addEventListener('DOMContentLoaded', ()=>{
 	setTimeout(()=>{
-		document.getElementById("LOADING_PAGE").style["display"] = "none";
-		siteCode();
+		document.getElementById("LOADING_PAGE_STYLE").innerHTML = `
+		.lprogress::before{
+			animation: loading_progressbar_fill 2s ease-in-out;
+		}
+		`;
+		setTimeout(()=>{
+			document.getElementById("lprogress").setAttribute("data-label", "100%");
+			setTimeout(()=>{
+				document.getElementById("LOADING_PAGE").style["display"] = "none";
+				siteCode();
+			}, 100);
+		}, 2000);
 	}, 2000);
 });
