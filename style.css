@@ -87,7 +87,7 @@ body{
 	background-image: url("assets/imgs/bg.png");
 	background-repeat: repeat-y;
 	background-size: 1000px;
-	animation: bg_sliding_anim 1s linear infinite;
+	animation: bg_sliding_anim 10s linear infinite;
 	width: 100%;
 	height: 100%;
 } .BG_MAIN__ *{
