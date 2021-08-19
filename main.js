@@ -126,7 +126,7 @@ function siteCode(){
 	addProject("assets/imgs/noImg.png",    [100,100], "<strong>RunPythonCodeFromDocx</strong> something i made in a few hours that can run python code from DOCX files.")
 	addProject("assets/imgs/noImg.png",    [100,100], "<strong>Aetheria</strong>, a game i've been working on with my 2 friends, kind of forgotten but i'll get back to working soon. <strong>THERE IS NO LOGO YET</strong>")
 }
-document.addEventListener('DOMContentLoaded', ()=>{
+window.onload = ()=>{
 	setTimeout(()=>{
 		document.getElementById("LOADING_PAGE_STYLE").innerHTML = `
 		.lprogress::before{
@@ -141,4 +141,4 @@ document.addEventListener('DOMContentLoaded', ()=>{
 			}, 100);
 		}, 2000);
 	}, 2000);
-});
+};
