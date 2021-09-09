@@ -17,7 +17,7 @@ Not at all! I have made it this far in only _2 years_ and i want to accomplish *
 a
 ### Social medias?
 [Here are my social medias](https://kenan238.github.io/#socialmedia)
-### I still don't believe you did it in 2 years...
+### I still don't believe you learned that much about coding in only 2 years...
 "Everything can be possible, if you work hard, chose the right path, and make the right decisions." - Definetly not me
 ### Sum everything up in a little sentence.
 I am kenan, i've been coding for 2 years, and i'm happy.
