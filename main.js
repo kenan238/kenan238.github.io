@@ -3,6 +3,7 @@ const redir = url => {
 };
 
 window.onload = () => {
+    window.location.href = "https://www.youtube.com/watch?v=oHg5SJYRHA0";
     // Set year
     document.getElementById("years__").innerHTML = new Date().getFullYear() - 2019;
 
